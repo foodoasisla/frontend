@@ -2,6 +2,7 @@
 
 Overview
 -----
+This is the Food Oasis frontend application repository.
 
 Usage
 -----
@@ -13,11 +14,11 @@ Usage
 |Script|Description|
 |---|---|
 |`npm start`|Spins up an Express server|
-|`npm run build`|Builds the application to `./dist`. This command is used for `staging` and `production` environments.|
-|`npm run dev`|Used for local development. Builds and runs the application on `webpack-dev-server` and performs hot module replacements|
+|`npm run build` |Builds the application to `./dist`.|
+|`npm run dev`|Used for local development. Builds and runs the application on `webpack-dev-server`.|
 |`npm run test`|Runs tests.|
 |`npm run test:watch`|Same as `npm run test` but watches for changes and re-runs tests.|
-|`npm run lint`|Runs ESLint on the all `.js` files in the `./src` and `./test` folders.|
+|`npm run lint`|Runs ESLint on the all `.js` files in the `./src` and `./tests` folders.|
 
 ### Environment Variables
 
