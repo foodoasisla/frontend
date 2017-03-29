@@ -30,14 +30,15 @@ Project Structure
 .
 ├── src                      # Main application folder
 │   └── actions              # Action creators
-│   └── components           # Functional components
+│   └── components           # All react components
+│   │   └── common           # Common components
+│   │   └── layouts          # Layouts
+│   │   └── views            # Components for each route / page
 │   └── containers           # Redux connect wrapped components
 │   └── decorators           # Higher-order component decorators
-│   └── layouts              # Layout components
 │   └── reducers             # Reducers
 │   └── styles               # Base and component styles
 │   └── utils                # Helpers and constants
-│   └── views                # Components for each route
 │   └── index.html           # Index file where compiled JS and CSS is injected and served
 │   └── index.js             # Entry point of application
 ├── static                   # Static files

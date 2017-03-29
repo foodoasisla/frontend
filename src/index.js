@@ -5,7 +5,7 @@ import { AppContainer } from 'react-hot-loader';
 import es6promise from 'es6-promise';
 import 'isomorphic-fetch';
 
-import App from './App';
+import App from './components/App';
 
 /* Polyfills */
 es6promise.polyfill();
@@ -22,5 +22,5 @@ const render = (Component) => {
 render(App);
 
 if (module.hot) {
-  module.hot.accept('./App', () => { render(App); });
+  module.hot.accept('./components/App', () => { render(App); });
 }
