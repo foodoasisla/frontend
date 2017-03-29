@@ -60,7 +60,7 @@ module.exports = (options) => {
 
     webpackConfig.output = {
       path: Path.join(__dirname, '../dist'),
-      filename: `/scripts/${options.jsFileName}`,
+      filename: `scripts/${options.jsFileName}`,
     };
 
     webpackConfig.plugins.push(
@@ -70,7 +70,7 @@ module.exports = (options) => {
       }),
       new Webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
-        filename: `/scripts/${options.vendorFileName}`,
+        filename: `scripts/${options.vendorFileName}`,
         minChunks: 3,
       }),
       new Webpack.DefinePlugin({
