@@ -1,6 +1,6 @@
 /* Libraries */
 import React from 'react';
-import { Route, IndexRoute } from 'react-router';
+import { IndexRoute, Route } from 'react-router';
 import MapPage from './components/views/MapPage';
 
 /* React components */
