@@ -3,7 +3,7 @@ import React from 'react';
 import { Route } from 'react-router';
 
 /* React components */
-import BaseLayout from './layouts/BaseLayout';
+import BaseLayout from './components/layouts/BaseLayout';
 
 
 function makeRoutes(store) {
