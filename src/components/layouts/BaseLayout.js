@@ -2,7 +2,7 @@
 import React, { PropTypes } from 'react';
 
 /* Styles */
-import '../../styles/_base.scss';
+import './../../styles/_base.scss';
 
 
 const BaseLayout = ({ children }) => (
