@@ -1,8 +1,11 @@
 import React from 'react';
+import Map from '../common/Map';
 
 const MapPage = () => {
   return (
-    <div>MapPage Component here</div>
+    <div>
+      <Map />
+    </div>
   );
 };
 
