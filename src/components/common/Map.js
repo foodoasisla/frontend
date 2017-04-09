@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 
+import * as tokens from './../../utils/constants/tokens'
+
 const Map = () => {
-  const mapBoxToken = 'pk.eyJ1Ijoic2pheW1vb24xNSIsImEiOiJjajE2ejhjMXgwM3YxMndtejdpbnlkbWp0In0.HAeIBMg25HSE8zHyNHMccg';
+  const mapBoxToken = tokens.mapBoxToken
   return (
     <div>
       <ReactMapboxGl
