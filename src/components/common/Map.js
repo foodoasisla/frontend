@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
 
-import * as tokens from './../../utils/constants/tokens'
+import { MAPBOX_TOKEN } from './../../utils/constants/tokens'
 
 const Map = () => {
-  const mapBoxToken = tokens.mapBoxToken
+  const mapBoxToken = MAPBOX_TOKEN
   return (
     <div>
       <ReactMapboxGl
