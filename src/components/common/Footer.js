@@ -29,7 +29,7 @@ const Footer = () => {
 
       <section id='donate'>
         <h2>Support this project</h2>
-        <p>We're a volunteer-based project and would love your donation!</p>
+        <p>We are a volunteer-based project and would love your donation!</p>
         <p>On the donation page, please choose <em>Los Angeles Brigade</em> and make it in honor of <em>Food Oasis LA</em> with the email address <a href='mailto:info@foodoasis.la'>info@foodoasis.la</a></p>
         <p class="action"><a href="https://www.codeforamerica.org/donate" target="_blank">Donate</a></p>
       </section>
