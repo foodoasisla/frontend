@@ -1,9 +1,13 @@
 import React from 'react';
 import Map from '../common/Map';
+import SearchBar from '../common/SearchBar';
 
 const MapPage = () => {
   return (
-    <Map />
+    <div>
+      <SearchBar />
+      <Map />
+    </div>
   );
 };
 
