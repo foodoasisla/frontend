@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
   searchQueryChanged,
-  fetchStated,
+  fetchStarted,
   fetchFinished } from '../../actions';
 
 class SearchBar extends Component {
@@ -13,7 +13,7 @@ class SearchBar extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    this.props.fetchStated();
+    this.props.fetchStarted();
     const { searchQuery } = this.props;
     //request info to backend
 
@@ -45,5 +45,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   searchQueryChanged,
-  fetchStated,
+  fetchStarted,
   fetchFinished })(SearchBar);

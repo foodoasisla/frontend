@@ -23,7 +23,7 @@ export const searchQueryChanged = (text) => {
   };
 };
 
-export const fetchStated = () => {
+export const fetchStarted = () => {
   return { type: 'FETCH_STARTED' };
 };
 
