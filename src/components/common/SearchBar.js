@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { searchQueryChanged } from '../../actions';
+import {
+  searchQueryChanged,
+  fetchStated,
+  fetchFinished } from '../../actions';
 
 class SearchBar extends Component {
 
   onSearchQueryChange(event) {
-    console.log('event', event.target.value);
     this.props.searchQueryChanged(event.target.value);
+  }
+
+  onFormSubmit(event) {
+    event.preventDefault();
+    this.props.fetchStated();
+    const { searchQuery } = this.props;
+    //request info to backend
+
+    //reset searchQuery prop to ''
+    this.props.fetchFinished();
   }
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
+      <form onSubmit={this.onFormSubmit.bind(this)}>
         <input
           placeholder="Find healthy food"
           onChange={this.onSearchQueryChange.bind(this)}
@@ -26,10 +38,12 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state in mapStateToProps', state);
   const { searchQuery } = state.search;
   console.log('searchQuery', searchQuery);
   return { searchQuery };
 };
 
-export default connect(mapStateToProps, { searchQueryChanged })(SearchBar);
+export default connect(mapStateToProps, {
+  searchQueryChanged,
+  fetchStated,
+  fetchFinished })(SearchBar);

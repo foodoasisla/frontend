@@ -17,9 +17,16 @@ export const clearState = createAction(
 );
 
 export const searchQueryChanged = (text) => {
-  console.log('text in action', text)
   return {
     type: 'SEARCH_QUERY_CHANGED',
     payload: text
   };
 };
+
+export const fetchStated = () => {
+  return { type: 'FETCH_STARTED' };
+};
+
+export const fetchFinished = () => {
+  return { type: 'FETCH_FINISHED' };
+}
