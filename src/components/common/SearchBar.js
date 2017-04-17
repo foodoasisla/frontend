@@ -1,37 +1,35 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { searchQueryChanged } from '../../actions';
 
 class SearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { term: '' };
-    this.onInputChange = this.onInputChange.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
+
+  onSearchQueryChange(event) {
+    console.log('event', event.target.value);
+    this.props.searchQueryChanged(event.target.value);
   }
 
-  onInputChange(event) {
-    this.setState({ term: event.target.value });
-  }
-  onFormSubmit(event) {
-    event.preventDefault();
-    //Need to call an action here to update application state 'searchQuery'
-    console.log('You typed ', this.state.term);
-    this.setState({ term: '' });
-  }
   render() {
     return (
-      <form onSubmit={this.onFormSubmit} className="input-group">
+      <form onSubmit={this.onFormSubmit}>
         <input
           placeholder="Find healthy food"
-          className="form-control"
-          value={this.state.term}
-          onChange={this.onInputChange}
+          onChange={this.onSearchQueryChange.bind(this)}
+          value={this.props.searchQuery}
         />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">Submit</button>
+        <span>
+          <button type="submit">Submit</button>
         </span>
       </form>
     );
   }
 }
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+  console.log('state in mapStateToProps', state);
+  const { searchQuery } = state.search;
+  console.log('searchQuery', searchQuery);
+  return { searchQuery };
+};
+
+export default connect(mapStateToProps, { searchQueryChanged })(SearchBar);

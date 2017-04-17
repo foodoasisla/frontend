@@ -15,3 +15,11 @@ export const clearState = createAction(
     resolve({});
   })),
 );
+
+export const searchQueryChanged = (text) => {
+  console.log('text in action', text)
+  return {
+    type: 'SEARCH_QUERY_CHANGED',
+    payload: text
+  };
+};

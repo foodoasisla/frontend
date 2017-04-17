@@ -5,7 +5,7 @@ import { routerReducer } from 'react-router-redux';
 
 /* Constants */
 import INITIAL_STATE from './../state';
-
+import SearchReducer from './SearchReducer';
 
 const indexReducer = handleActions({
   DEFAULT_ACTION: (state, action) => {
@@ -17,6 +17,7 @@ const indexReducer = handleActions({
 const appReducer = combineReducers({
   index: indexReducer,
   routing: routerReducer,
+  search: SearchReducer,
 });
 
 const rootReducer = (state, action) => {
