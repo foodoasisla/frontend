@@ -5,18 +5,14 @@ import { routerReducer } from 'react-router-redux';
 
 /* Constants */
 import INITIAL_STATE from './../state';
+import searchReducer from './searchReducer';
+import apiReducer from './apiReducer';
 
-
-const indexReducer = handleActions({
-  DEFAULT_ACTION: (state, action) => {
-    const newState = Object.assign({}, state, action.payload);
-    return newState;
-  },
-}, {});
 
 const appReducer = combineReducers({
-  index: indexReducer,
   routing: routerReducer,
+  searchQuery: searchReducer,
+  isFetching: apiReducer,
 });
 
 const rootReducer = (state, action) => {
