@@ -1,32 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  searchQueryChanged,
-  fetchStarted,
-  fetchFinished } from '../../actions';
+import { search, updateSearchInput } from '../../actions';
 
 class SearchBar extends Component {
-
-  onSearchQueryChange(event) {
-    this.props.searchQueryChanged(event.target.value);
-  }
-
-  onFormSubmit(event) {
-    event.preventDefault();
-    this.props.fetchStarted();
-    const { searchQuery } = this.props;
-    //request info to backend
-
-    //reset searchQuery prop to ''
-    this.props.fetchFinished();
-  }
-
   render() {
     return (
-      <form onSubmit={this.onFormSubmit.bind(this)}>
+      <form onSubmit={this.props.search}>
         <input
           placeholder="Find healthy food"
-          onChange={this.onSearchQueryChange.bind(this)}
+          onChange={this.props.updateSearchInput}
           value={this.props.searchQuery}
         />
         <span>
@@ -38,12 +20,20 @@ class SearchBar extends Component {
 }
 
 const mapStateToProps = (state) => {
-  const { searchQuery } = state.search;
-  console.log('searchQuery', searchQuery);
-  return { searchQuery };
+  return { searchQuery: state.searchQuery };
 };
 
-export default connect(mapStateToProps, {
-  searchQueryChanged,
-  fetchStarted,
-  fetchFinished })(SearchBar);
+const mapDispatchToProps = dispatch => ({
+  updateSearchInput: (e) => {
+    dispatch(updateSearchInput(e.target.value));
+  },
+  search: (e) => {
+    e.preventDefault();
+    dispatch(search());
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(SearchBar);

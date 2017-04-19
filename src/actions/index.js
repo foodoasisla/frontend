@@ -2,31 +2,32 @@
 import { createAction } from 'redux-actions';
 
 
-export const defaultAction = createAction(
-  'DEFAULT_ACTION',
-  () => (new Promise((resolve) => {
-    resolve({});
+export const updateSearchInput = createAction(
+  'SEARCH_QUERY_CHANGED',
+  searchQuery => (new Promise((resolve) => {
+    resolve({ searchQuery });
   })),
 );
 
-export const clearState = createAction(
-  'CLEAR_STATE',
+export const startFetch = createAction(
+  'FETCH_STARTED',
   () => (new Promise((resolve) => {
-    resolve({});
+    resolve({ isFetching: true });
   })),
 );
 
-export const searchQueryChanged = (text) => {
-  return {
-    type: 'SEARCH_QUERY_CHANGED',
-    payload: text
-  };
-};
+export const endFetch = createAction(
+  'FETCH_FINISHED',
+  () => (new Promise((resolve) => {
+    resolve({ isFetching: false});
+  })),
+);
 
-export const fetchStarted = () => {
-  return { type: 'FETCH_STARTED' };
-};
-
-export const fetchFinished = () => {
-  return { type: 'FETCH_FINISHED' };
-}
+export const search = () => (dispatch, getState) => (
+  dispatch(startFetch())
+  .then(() => {
+    console.log("SEARCHING FOR: " + getState().searchQuery);
+    return Promise.resolve();
+  })
+  .then(dispatch(endFetch()))
+);

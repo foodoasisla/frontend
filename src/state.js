@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   locations: [],
-  currentLocation: [],
+  currentLocation: undefined,
   searchQuery: '',
   filters: {
     isOpen: false,
