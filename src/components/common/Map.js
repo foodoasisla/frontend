@@ -9,7 +9,7 @@ const Map = () => {
       style="mapbox://styles/mapbox/streets-v8"
       accessToken={MAPBOX_TOKEN}
       center={[-118.243685, 34.052234]}
-      containerStyle={{ height: '80vh', width: '80vw' }}
+      containerStyle={{ height: '80vh', width: '100vw' }}
     >
     </ReactMapboxGl>
   );
