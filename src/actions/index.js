@@ -19,7 +19,7 @@ export const startFetch = createAction(
 export const endFetch = createAction(
   'FETCH_FINISHED',
   () => (new Promise((resolve) => {
-    resolve({ isFetching: false});
+    resolve({ isFetching: false });
   })),
 );
 
@@ -30,4 +30,11 @@ export const search = () => (dispatch, getState) => (
     return Promise.resolve();
   })
   .then(dispatch(endFetch()))
+);
+
+export const updateSearchFilters = createAction(
+  'SEARCH_FILTER_CHANGED',
+  ({ prop, value }) => (new Promise((resolve) => {
+    resolve({ prop, value });
+  })),
 );
