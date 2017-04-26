@@ -10,8 +10,7 @@ class SearchFilter extends Component {
       foodPantries, 
       communityGardens, 
       farmersMarkets,
-      superMarkets,
-      updateSearchFilters } = this.props.filters;
+      superMarkets } = this.props.filters;
     return (
       <div>
       <form>
@@ -21,7 +20,7 @@ class SearchFilter extends Component {
             name = "isOpen"
             type = "checkbox"
             checked = { isOpen }
-            onChange = { updateSearchFilters }
+            onChange = { this.props.updateSearchFilters }
           />
         </label>
         <label>
@@ -30,7 +29,7 @@ class SearchFilter extends Component {
             name = "foodPantries"
             type = "checkbox"
             checked = { foodPantries }
-            onChange = { updateSearchFilters }
+            onChange = { this.props.updateSearchFilters }
           />
         </label>
         <label>
@@ -39,7 +38,7 @@ class SearchFilter extends Component {
             name = "communityGardens"
             type = "checkbox"
             checked = { communityGardens }
-            onChange = { updateSearchFilters }
+            onChange = { this.props.updateSearchFilters }
           />
         </label>
         <label>
@@ -48,7 +47,7 @@ class SearchFilter extends Component {
             name = "farmersMarkets"
             type = "checkbox"
             checked = { farmersMarkets }
-            onChange = { updateSearchFilters }
+            onChange = { this.props.updateSearchFilters }
           />
         </label>
         <label>
@@ -57,7 +56,7 @@ class SearchFilter extends Component {
             name = "superMarkets"
             type = "checkbox"
             checked = { superMarkets }
-            onChange = { updateSearchFilters }
+            onChange = { this.props.updateSearchFilters }
           />
         </label>
         </form>
@@ -77,7 +76,6 @@ const mapDispatchToProps = dispatch => ({
     dispatch(updateSearchFilters({ prop : name, value : value }));
   }
 });
-
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
