@@ -12,9 +12,7 @@ class SearchBar extends Component {
           onChange = { this.props.updateSearchInput }
           value = { this.props.searchQuery }
         />
-        <span>
-        <button type = "submit" > Submit < /button>
-        </span>
+        <button type = "submit" > Submit </button>
       </form>
     );
   }
