@@ -7,12 +7,14 @@ import { routerReducer } from 'react-router-redux';
 import INITIAL_STATE from './../state';
 import searchReducer from './searchReducer';
 import apiReducer from './apiReducer';
+import filterReducer from './filterReducer';
 
 
 const appReducer = combineReducers({
   routing: routerReducer,
   searchQuery: searchReducer,
   isFetching: apiReducer,
+  filters: filterReducer
 });
 
 const rootReducer = (state, action) => {
